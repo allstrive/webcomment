@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Text Commenter",
+    "version": "1.0",
+    "description": "An extension that allows users to comment on highlighted text and display the comments when revisiting the page.",
+    "icons": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "<all_urls>"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "icons/icon-48.png",
+      "default_popup": "popup.html",
+      "default_title": "Text Commenter"
+    }
+  }
+  
